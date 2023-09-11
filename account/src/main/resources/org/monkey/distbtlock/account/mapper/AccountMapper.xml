@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.monkey.distbtlock.account.mapper.AccountMapper">
+
+    <insert id="insert" parameterType="org.monkey.distbtlock.account.pojo.Account">
+        insert into tb_account(act_type, act_user, act_pwd) values(#{actType}, #{actUser}, #{actPwd})
+    </insert>
+
+    <select id="selectAll" resultType="org.monkey.distbtlock.account.pojo.Account">
+        select * from tb_account;
+    </select>
+</mapper>

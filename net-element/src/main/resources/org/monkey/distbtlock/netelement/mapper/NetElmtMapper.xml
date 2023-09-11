@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.monkey.distbtlock.netelement.mapper.NetElmtMapper">
+
+    <insert id="insert" parameterType="org.monkey.distbtlock.netelement.pojo.NetElmt">
+        insert into tb_net_elmt(ne_dn, ne_name, opt_time) values(#{neDn}, #{neName}, NOW())
+    </insert>
+
+    <select id="selectAll" resultType="org.monkey.distbtlock.netelement.pojo.NetElmt">
+        select * from tb_net_elmt;
+    </select>
+</mapper>

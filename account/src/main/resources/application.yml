@@ -1,0 +1,26 @@
+server:
+  port: 9030
+  servlet:
+    context-path: /account
+
+spring:
+  application:
+    name: account-service # eureka服务名称
+  datasource:
+    url: jdbc:mysql://192.168.1.103:3306/db_dv?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+# mybatis config
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: org/monkey/distbtlock/account/mapper/AccountMapper.xml
+
+# eureka config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10010/eureka

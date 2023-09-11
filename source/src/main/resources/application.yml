@@ -1,0 +1,35 @@
+server:
+  port: 9020
+  servlet:
+    context-path: /source
+
+spring:
+  application:
+    name: source-service # eureka服务名称
+  datasource:
+    url: jdbc:mysql://192.168.1.103:3306/db_dv?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    host: 192.168.1.103
+    port: 5672
+    stream:
+      username: monkey
+      password: 123456
+    virtual-host: vhost_distbtlock
+
+
+# mybatis config
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: org/monkey/distbtlock/source/mapper/SourcesMapper.xml
+
+# eureka config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10010/eureka
+
+# rabbitmq config
